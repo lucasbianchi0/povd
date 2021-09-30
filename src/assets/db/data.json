@@ -1,0 +1,30 @@
+{
+
+    "data":[{
+        "id": "1",
+        "name":"blanca",
+        "image":"https://http2.mlstatic.com/D_910446-MLA41933568848_052020-O.jpg"
+    },{
+        "id": "2",
+        "name":"negra",
+        "image":"https://http2.mlstatic.com/D_910446-MLA41933568848_052020-O.jpg"
+    },{
+        "id": "3",
+        "name":"azul",
+        "image":"https://http2.mlstatic.com/D_910446-MLA41933568848_052020-O.jpg"
+    },{
+        "id": "4",
+        "name":"violet",
+        "image":"https://http2.mlstatic.com/D_910446-MLA41933568848_052020-O.jpg"
+    },{
+        "id": "5",
+        "name":"roja",
+        "image":"https://http2.mlstatic.com/D_910446-MLA41933568848_052020-O.jpg"
+    },{
+        "id": "6",
+        "name":"gris",
+        "image":"https://http2.mlstatic.com/D_910446-MLA41933568848_052020-O.jpg"
+    }]
+
+
+}

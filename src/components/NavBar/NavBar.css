@@ -1,0 +1,25 @@
+
+.NavBar{
+    background-color: lightblue;
+
+}
+
+
+.navBar-container{
+    max-width: 1000px;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navBar-list{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    margin: 0 25px;
+}
