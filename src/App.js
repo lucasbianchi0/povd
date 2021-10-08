@@ -4,7 +4,7 @@ import Landing from './components/Landing/Landing';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () =>{
   return (
    
     <div className="App">

@@ -9,7 +9,7 @@ const Landing = () => {
         <div className="landing">
             <div className="Container landing-container ">
                 {data.map((data)=>(
-                    <Card  image ={data.image} name={data.name} key={data.id}/>
+                    <Card  image ={data.image} name={data.name} key={data.id} canti={data.canti}/>
                     
 
                 ))}

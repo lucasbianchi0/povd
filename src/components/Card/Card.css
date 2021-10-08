@@ -16,3 +16,31 @@
     height: auto;
     
 }
+
+.caja-cantidad{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mas{
+    text-decoration: none;
+    background: none;
+    width: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+.menos{
+    text-decoration: none;
+    background: none;
+    width: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+.boton-estilo{
+    margin-top: 20px;
+}
