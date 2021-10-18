@@ -3,6 +3,7 @@ import './App.css';
 import Landing from './components/Landing/Landing';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CardList from './components/CardList/CardList';
 
 const App = () =>{
   return (
@@ -11,6 +12,8 @@ const App = () =>{
       
         <NavBar/>
         <Landing></Landing>
+        <CardList/>
+
       
      
     </div>

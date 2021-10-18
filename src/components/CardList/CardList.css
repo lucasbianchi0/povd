@@ -1,0 +1,13 @@
+
+.estructura-deproductos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.produc{
+    width: 300px;
+    margin-top: 30px;
+}
