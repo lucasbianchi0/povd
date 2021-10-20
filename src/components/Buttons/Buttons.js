@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button} from "react-bootstrap"
+import "./Buttons.css"
 
 const ButtonPrimary = ({button_string, onClick}) => {
     return <Button variant="dark" className="boton-estilo" onClick={onClick}>

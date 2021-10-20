@@ -3,7 +3,7 @@ import { Card, Image } from 'semantic-ui-react'
 import "./CardProduct.css"
 
 const CardProduct = ({data}) => (
-  <Card className="producto-stili">
+  <Card className="card-container">
     <Image src={data.image} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{data.title}</Card.Header>

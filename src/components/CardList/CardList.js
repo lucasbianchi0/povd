@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import CardProduct from '../CardProduct/CardProduct'
-import "./CardList.css"
+import { Spinner } from 'react-bootstrap';
+import CardProduct from '../CardProduct/CardProduct';
+import "./CardList.css";
 
 
 
-const CardList = () => {
+
+
+const CardList = ({title}) => {
 
     const [ products, setProducts] = useState ([]);
+    const [isLoading, setIsLoading]= useState(false)
 
     console.log(products)
 
@@ -14,19 +18,21 @@ const CardList = () => {
         /*fetch('https://api.github.com/users')
         .then(response => response.json())
         .then(json => setProducts(json))*/
-
+        setIsLoading(true)
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(json=>setProducts(json))
+
+        setTimeout(()=>{ setIsLoading(false);}, 5000)
     }, [])
 
 
     return (
         <div>
-            <h2>Otros productos</h2>
+            
+            <h2 className="tituloo">{title}</h2>
 
-
-            <div className="estructura-deproductos contenedor-cardlist">
+            { isLoading ? <Spinner/> : <div className="estructura-deproductos contenedor-cardlist">
                 {products.map((product)=>{
                     return (
                         <div className="produc">
@@ -34,10 +40,15 @@ const CardList = () => {
                         </div>
                     )
                 })}
-            </div>
+        </div>}
+           
             
         </div>
     )
+}
+
+CardList.defaultProps ={
+    title:`Productos proximamente`,
 }
 
 export default CardList

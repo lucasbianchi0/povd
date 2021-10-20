@@ -23,6 +23,7 @@ const Card = ({ image , name , canti}) => {
 
 
     return (
+
         <div className="card-container">
             <figure className="caja-imagen-landing">
                 <img src= {image} alt="" />
