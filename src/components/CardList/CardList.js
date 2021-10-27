@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react'
 import { Spinner } from 'react-bootstrap';
 import CardProduct from '../CardProduct/CardProduct';
 import "./CardList.css";
+import axios from 'axios';
 
+import {Link} from "react-router-dom"
 
 
 
@@ -17,14 +19,22 @@ const CardList = ({title}) => {
     useEffect(() => {
         /*fetch('https://api.github.com/users')
         .then(response => response.json())
-        .then(json => setProducts(json))*/
-        setIsLoading(true)
+        .then(json => setProducts(json))
+        setIsLoading(true) 
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(json=>setProducts(json))
 
         setTimeout(()=>{ setIsLoading(false);}, 5000)
-    }, [])
+    }, [])*/
+
+
+
+    axios(`https://fakestoreapi.com/products`).then((json)=>
+    setProducts(json.data))
+    setTimeout(()=>{ setIsLoading(false);}, 5000)
+   
+}, [])
 
 
     return (
@@ -33,10 +43,12 @@ const CardList = ({title}) => {
             <h2 className="tituloo">{title}</h2>
 
             { isLoading ? <Spinner/> : <div className="estructura-deproductos contenedor-cardlist">
-                {products.map((product)=>{
+                {products.map((data)=>{
                     return (
-                        <div className="produc">
-                            <CardProduct data={product}/>
+                        <div className="produc " key={data.id}>
+                            <Link to={`/detail/${data.id}`}>
+                                <CardProduct data={data}/>
+                            </Link>
                         </div>
                     )
                 })}

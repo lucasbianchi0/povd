@@ -1,28 +1,42 @@
 
 import './App.css';
-import Landing from './components/Landing/Landing';
+
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardList from './components/CardList/CardList';
 import Spinner from './components/Spinner/Spinner';
-import Portada from './components/Portada/Portada';
+
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Home from './views/Home';
+import About from './views/About';
+import Contact from './views/Contact';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import Landing from './components/Landing/Landing';
+
+
 
 
 const App = () =>{
   
   return (
-   
-    <div className="App">
-      
-        <NavBar/>
-        <Portada></Portada>
-        <Landing></Landing>
-        <Spinner></Spinner>
-        <CardList/>
+    <Router>
+      <div className="App">
+  
+          <NavBar/>
+           
+            <Switch>
+                <Route path="/"  exact component={Home}/>
+                <Route path="/About" component={About}/>
+                <Route path="/Contact" component={Contact}/>
+                <Route path="/detail/:id" component={ProductDetail}/>
+                <Route path="/productdetail/:id" component={Landing}/>
 
-      
-     
-    </div>
+            </Switch>
+
+      </div>
+      </Router>
   );
 }
 
