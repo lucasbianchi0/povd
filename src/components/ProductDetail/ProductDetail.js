@@ -8,50 +8,43 @@ const ProductDetail = ({match}) => {
    console.log(`MATCH` , match)
 
    let productID = match.params.id;
-    const [productMatch, setMatch] = useState ([]);
+    const [productMatch, setProductMatch] = useState ([]);
 
     useEffect(()=>{
         
-        axios(`https://fakestoreapi.com/products/${productID}`).then((json)=>
-        setMatch(json.data)
-        )
+        axios(`https://fakestoreapi.com/products/${productID}`)
+        .then((response)=> setProductMatch(response.data))
+        
          }, [productID]);
-    /*
-         fetch(`https://fakestoreapi.com/products/${productId}`)
-            .then(res=>res.json())
-            .then(json=>setRproducts(json))
-    }, [productId])
-      */  
 
          console.log(productMatch)
+         const { id, image, category, price, title }= productMatch;
+         
     return (
             <div className="estructura-deproductos contenedor-cardlist">        
-            <h1>hola</h1>
-             
-             { productMatch.map((data) => {
-                    return (
-            
+            <h1>productos</h1>
+        
+                   
                 
-                <Card className="card-container" key={data.id}>
-                        <Image src={data.image} wrapped ui={false} />
+                <Card className="card-container" key={id}>
+                        <Image src={image} wrapped ui={false} />
                         <Card.Content>
-                        <Card.Header>{data.title}</Card.Header>
+                        <Card.Header>{title}</Card.Header>
                         <Card.Meta>
-                            <span className='date'>{data.category}</span>
+                            <span className='date'>{category}</span>
                         </Card.Meta>
                         <Card.Description>
-                            {data.price}
+                            {price}
                         </Card.Description>
                         </Card.Content>
 
                     </Card>
-                   
+             
                
-                    )
-                })}                    
-            
+
         </div>
-    )
+        )
+
 }
 
 export default ProductDetail
